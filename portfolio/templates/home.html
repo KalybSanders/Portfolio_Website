@@ -1,17 +1,85 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Kalyb Sanders</title>
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-        Hello World!
+
+<div id="header">
+    <div class="container">
+        <nav id="nav-bar" class="nav-bar">
+            <div class="logo">Kalyb Sanders</div>
+            <!-- <img src="" class="logo">        This is where to put name -->
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}" class="link active">Home</a></li>
+                <li><a href="#" class="link active">About</a></li>
+                <li><a href="#" class="link active">Services</a></li>
+                <li><a href="#" class="link active">Portfolio</a></li>
+                <li><a href="{% url 'contact' %}" class="link">Contact</a></li>
+            </ul>
+            <a href="#menu">
+                <img src="{% static 'img/arrow_circle.svg' %}" alt="Menu" class="menu-icon">
+            </a>
+        </nav>
+
+        <div class="header-text">
+            <p>Full Stack Developer</p>
+            <h1>Hello, I'm <span>Kalyb Sanders</span> <br>  From Georgia.</h1>
+        </div>
+    </div> 
+</div>
+
+<!-- About Section -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="{% static 'img/me.jpg' %}" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1>About Me</h1>
+            </div>
+        </div>
     </div>
+</div>
+
+<!-- Portfolio Section -->
+<div id="portfolio">
+    <div class="container">
+        
+    </div>
+</div>
+
+<!-- Contact Me Section -->
+<div id="contact-me">
+    <div class="container">
+        <div class="contact-info">
+            <ul>
+                <li>Kalyb Sanders</li>
+                <li>155 Sparrows Cove</li>
+                <li>Fayetteville, Georgia 30215</li>
+                <li>(404) 388-3382</li>
+                <li>kalyb.sanders@gmail.com</li>
+            </ul>
+        </div>
+
+        <form action="post" name="contactForm" onSubmit="">
+            <ul>
+                <li><input type="text" name="firstName" placeholder="First Name"/></li>
+                <li><input type="text" name="lastName" placeholder="Last Name"/></li>
+                <li><input type="text" name="phone" placeholder="Phone Number"/></li>
+                <li><input type="text" name="email" placeholder="Email"/></li>
+                <li><input type="text" name="message" placeholder="Message contents..."/></li>
+                <li><input type="submit" name="submit" value="Submit"/></li>
+            </ul>
+        </form>
+    </div>
+</div>
+
 </body>
-
-<script>
-
-</script>
-
 </html>
