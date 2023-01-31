@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0 ;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color:#fff;
+}
+
+/* main {
+    margin-left: 5rem;
+    
+} */
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/coffee_shop_programming.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    
+}
+
+nav {
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin: 20%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span {
+    color: brown;
+}
+
+/* About Section CSS */
+
+#about {
+    padding: 80px 0px;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+/* SVG Animations */
+
+.menu-icon {
+    transform: rotate(-90deg);
+    transition: 0.5s;
+}
+
+.menu-icon:hover {
+    transition: 0.5s;
+    transform: rotate(0deg);
+
+}
+
+.menu-icon:active {
+    background-color: white;
+}
+
+.menu-icon:active::after {
+    height: 1000px;
+    width: 100%;
+}
