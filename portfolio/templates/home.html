@@ -4,35 +4,34 @@
 
 <head>
     <title>Kalyb Sanders</title>
-
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 
 <body>
 
-<div id="header">
-    <div class="container">
-        <nav id="nav-bar" class="nav-bar">
-            <div class="logo">Kalyb Sanders</div>
-            <!-- <img src="" class="logo">        This is where to put name -->
-            <ul class="nav-links">
-                <li><a href="{% url 'home' %}" class="link active">Home</a></li>
-                <li><a href="#" class="link active">About</a></li>
-                <li><a href="#" class="link active">Services</a></li>
-                <li><a href="#" class="link active">Portfolio</a></li>
-                <li><a href="{% url 'contact' %}" class="link">Contact</a></li>
-            </ul>
-            <a href="#menu">
-                <img src="{% static 'img/arrow_circle.svg' %}" alt="Menu" class="menu-icon">
-            </a>
-        </nav>
 
-        <div class="header-text">
-            <p>Full Stack Developer</p>
-            <h1>Hello, I'm <span>Kalyb Sanders</span> <br>  From Georgia.</h1>
-        </div>
-    </div> 
-</div>
+
+
+
+<header>
+
+    <nav>
+        <div class="logo">Kalyb Sanders</div>
+                
+        <ul>
+            <li><a href="{% url 'home' %}" class="link active">Home</a></li>
+            <li><a href="#" class="link active">About</a></li>
+            <li><a href="#" class="link active">Portfolio</a></li>
+            <li><a href="{% url 'contact' %}" class="link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-text">
+        <p>Full Stack Developer</p>
+        <h1>Hello, I'm <span>Kalyb Sanders</span> <br>  From Georgia.</h1>
+    </div>
+    
+</header>
 
 <!-- About Section -->
 <div id="about">
@@ -42,7 +41,99 @@
                 <img src="{% static 'img/me.jpg' %}" alt="">
             </div>
             <div class="about-col-2">
-                <h1>About Me</h1>
+                <h1 class="sub-title">About Me</h1>
+                <p>Hi, I'm Kalyb Sanders. I'm a web developer who crafts solutions best suited for you. </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onClick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onClick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onClick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Web App Development</li>
+                        <li><span>App Development</span><br>Building Android Apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>()</span><br>Java</li>
+                        <li><span>()</span><br>Python</li>
+                        <li><span>()</span><br>SQL</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>University of Georgia</span><br>Bachelors in Computer Science</li>
+                        <li><span>University of Georgia</span><br>Minor in German Studies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-col-3">
+                <!-- <h1 class="sub-title">Technologies</h1>
+                Technologies Cards
+                <div class="card-container">
+                    
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>Java</b></h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>Python</b></h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>C++</b></h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>MySQL</b></h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>HTML&CSS</b></h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>PHP</b></h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cont">
+                            <h4><b>Django</b></h4>
+                        </div>
+                    </div>
+                </div> -->
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------ Services --------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <!-- <i class="fas fa-code"></i> -->
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <!-- <i class="fas fa-crop-alt"></i> -->
+                <h2>Android App Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#">Learn more</a>
             </div>
         </div>
     </div>
@@ -51,35 +142,96 @@
 <!-- Portfolio Section -->
 <div id="portfolio">
     <div class="container">
-        
+        <h1 class="sub-title">My Work</h1>       
+        <div class="work-list">
+            <div class="work">
+                <img src="{% static 'img/work-1.png' %}">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>The app connects you to the talented people around the world.
+                        Download it from play store.</p>
+                        <a href="#">(Icon)</a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{% static 'img/work-2.png' %}">
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>A simple to use music app.</p>
+                        <a href="#">(Icon)</a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{% static 'img/work-3.png' %}">
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>A shopping app for a retail store.</p>
+                        <a href="#">(Icon)</a>
+                </div>
+            </div>
+        </div> 
+        <a href="#" class="btn">See more</a>
     </div>
 </div>
 
 <!-- Contact Me Section -->
-<div id="contact-me">
+<div id="contact">
     <div class="container">
-        <div class="contact-info">
-            <ul>
-                <li>Kalyb Sanders</li>
-                <li>155 Sparrows Cove</li>
-                <li>Fayetteville, Georgia 30215</li>
-                <li>(404) 388-3382</li>
-                <li>kalyb.sanders@gmail.com</li>
-            </ul>
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>kalyb.sanders@gmail.com</p>
+                <p>(404)388-3382</p>
+                <p>Fayetteville, Georgia</p>
+                <p></p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kalyb-sanders-a7872b237/"><img src="{% static 'img/linkedin-circled-30.png' %}"></a>
+                    <a href="https://github.com/KalybSanders"><img src="{% static 'img/github-30.png' %}"></a>
+                </div>
+                <a href="img/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form action="contact" name="contactForm" method="POST">
+                    {% csrf_token %}
+                    <ul>
+                        <li><input type="text" name="fullName" id="fullName" placeholder="Full Name" required/></li>
+                        <li><input type="tel" name="phone" id="phone" placeholder="Phone Number (ex. 123-456-7890)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/></li>
+                        <li><input type="email" name="email" id="email" placeholder="Email" required/></li>
+                        <li><textarea type="text" name="message" id="message" placeholder="Message contents..." height="1000px" required></textarea></li>
+                        <li><input type="submit" value="Submit" class="btn btn2"/></li>
+                    </ul>
+                </form>
+            </div>
         </div>
+    </div>
 
-        <form action="post" name="contactForm" onSubmit="">
-            <ul>
-                <li><input type="text" name="firstName" placeholder="First Name"/></li>
-                <li><input type="text" name="lastName" placeholder="Last Name"/></li>
-                <li><input type="text" name="phone" placeholder="Phone Number"/></li>
-                <li><input type="text" name="email" placeholder="Email"/></li>
-                <li><input type="text" name="message" placeholder="Message contents..."/></li>
-                <li><input type="submit" name="submit" value="Submit"/></li>
-            </ul>
-        </form>
+    <div class="copyright">
+        <p>Copyright © Kalyb Sanders.</p>
     </div>
 </div>
+
+<script type="text/javascript">
+    window.addEventListener("scroll", function() {
+        var nav = document.querySelector("nav")
+        nav.classList.toggle("sticky", window.scrollY > 0)
+    }) 
+</script>
+
+<script>
+    var tabLinks = document.getElementsByClassName("tab-links");
+    var tabContents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabName) {
+        for(tabLink of tabLinks) {
+            tabLink.classList.remove("active-link")
+        }
+        for(tabContent of tabContents) {
+            tabContent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabName).classList.add("active-tab")
+    }
+</script>
 
 </body>
 </html>
