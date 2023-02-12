@@ -10,46 +10,76 @@ body {
     color:#fff;
 }
 
-/* main {
+/* 
+main {
     margin-left: 5rem;
-    
-} */
+}  */
 
-#header {
-    width: 100%;
+.container {
+    padding: 10px 10%;
+}
+
+header {
+    
     height: 100vh;
     background-image: url('../img/coffee_shop_programming.jpg');
     background-size: cover;
     background-position: center;
 }
 
-.container {
+nav {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    /* align-items: center; */
+    transition: 0.5s;
+    padding: 40px 50px;
+    z-index: 100000;
+
+    /* flex-wrap: wrap; */
     
 }
 
-nav {
-    display: flex;
-    align-items:  center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.5);
+nav .logo {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    
+    flex: 1;
 }
 
-.logo {
-    width: 140px;
+nav ul {
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+    transition: 0.5s;
 }
 
 nav ul li {
-    display: inline-block;
+    position: relative;
     list-style: none;
-    margin: 10px 20px;
+
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
     position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+
 }
 
 nav ul li a::after {
@@ -61,31 +91,45 @@ nav ul li a::after {
     left: 0;
     bottom: -6px;
     transition: 0.5s;
+
 }
 
 nav ul li a:hover::after {
     width: 100%;
 }
 
+nav.sticky {
+    padding: 10px 100px;
+    background: rgb(255, 255, 255);
+    /* background: rgba(0, 0, 0, 0.274); */
+}
+
+nav.sticky ul li a, 
+nav.sticky .logo {
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    /* color: #3b1c0a; */
+}
+
 .header-text {
-    margin: 20%;
     font-size: 30px;
+    position: absolute;
+    top: 30vh;
+    left: 15%;
+    padding: 5vh 0 5vh 4vw;  /* top right bottom left */
+    background: rgba(0, 0, 0, 0.801);
 }
 
-.header-text h1 {
-    font-size: 60px;
-    margin-top: 20px;
-}
+/* 
 
-.header-text h1 span {
-    color: brown;
-}
+    About Section CSS 
 
-/* About Section CSS */
+*/
 
 #about {
-    padding: 80px 0px;
+    padding: 80px 0;
     color: #ababab;
+    position: relative;
 }
 
 .row {
@@ -94,8 +138,321 @@ nav ul li a:hover::after {
     flex-wrap: wrap;
 }
 
+.about-col-1 {
+    flex-basis: 35%;
+}
 
-/* SVG Animations */
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.about-col-3 {
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px; 
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #b54769;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+
+/* 
+
+    Services Section CSS
+
+*/
+
+#services {
+    padding: 30px 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px)
+}
+
+
+/* 
+
+    Portfolio Section CSS
+
+*/
+
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.5), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto; /* top&bottom  left&right*/
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #ff004f;
+
+}
+
+
+/* 
+
+    Contact Me Section CSS
+
+*/
+
+#contact {
+
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p img {
+    margin-right: 15px;
+    font-size: 25px;
+} 
+
+.contact-right ul {
+    list-style: none;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #ff004f;
+}
+
+.contact-right form {
+    width: 100%;
+    
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+    resize: none;
+}
+
+form btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+form .btn.btn2 {
+
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* 
+
+    SVG Animations 
+
+*/
 
 .menu-icon {
     transform: rotate(-90deg);
@@ -116,3 +473,78 @@ nav ul li a:hover::after {
     height: 1000px;
     width: 100%;
 }
+
+
+/* Technologies Card */
+
+.card-container {
+    display: flex;
+    justify-content: start;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: fit-content;
+    background-color: brown;
+    color: black;
+    margin-right: 5px;
+
+    
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 brown;
+}
+
+.card::after {
+    content: '';
+    width: 0;
+    height: 0;
+    background: gray;
+    position: relative;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.card:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.cont {
+    padding: 2px 16px;
+}
+
+
+/* Tooltip Settings */
+
+/* .tooltip {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    
+     visibility: hidden; 
+     width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1; 
+
+}
+
+.tooltip:hover {
+    visibility: visible;
+}
+ */
