@@ -3,7 +3,8 @@
 <html>
 
 <head>
-    <title>Kalyb Sanders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalyb</title>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 
@@ -13,22 +14,26 @@
 
 
 
-<header>
+<header id="#header">
 
     <nav>
-        <div class="logo">Kalyb Sanders</div>
+        <div class="logo">Kalyb</div>
                 
-        <ul>
-            <li><a href="{% url 'home' %}" class="link active">Home</a></li>
-            <li><a href="#" class="link active">About</a></li>
-            <li><a href="#" class="link active">Portfolio</a></li>
-            <li><a href="{% url 'contact' %}" class="link">Contact</a></li>
+        <ul id="sidemenu">
+            <img src="{% static 'img/arrow.svg' %}" class="menu-close" onclick="closemenu()"/>
+            <li><a href="#top" class="link active">Home</a></li>
+            <li><a href="#about" class="link active">About</a></li>
+            <li><a href="#services" class="link active">Services</a></li>
+            <li><a href="#portfolio" class="link active">Portfolio</a></li>
+            <li><a href="#contact" class="link">Contact</a></li>   <!--   {% url 'contact' %}   -->
         </ul>
+
+        <img src="{% static 'img/arrow.svg' %}" class="menu-open" onclick="openmenu()"/>
     </nav>
 
     <div class="header-text">
         <p>Full Stack Developer</p>
-        <h1>Hello, I'm <span>Kalyb Sanders</span> <br>  From Georgia.</h1>
+        <h1>Hello, I'm <span class="brown">Kalyb</span> Sanders <br>  From Georgia.</h1>
     </div>
     
 </header>
@@ -230,6 +235,18 @@
         }
         event.currentTarget.classList.add("active-link")
         document.getElementById(tabName).classList.add("active-tab")
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu")
+
+    function openmenu() {
+        sidemenu.style.top = "0";    
+    }
+
+    function closemenu() {
+        sidemenu.style.top = "-110vh";     
     }
 </script>
 

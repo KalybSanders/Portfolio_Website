@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth !important;
+    /* overflow-y: auto; */
+    /* scroll-padding-top: 300px; */
+}
+
 body {
     background: #080808;
     color:#fff;
@@ -118,6 +124,10 @@ nav.sticky .logo {
     left: 15%;
     padding: 5vh 0 5vh 4vw;  /* top right bottom left */
     background: rgba(0, 0, 0, 0.801);
+}
+
+.brown {
+    color: brown;
 }
 
 /* 
@@ -448,33 +458,6 @@ form .btn.btn2 {
     margin-top: 20px;
 }
 
-/* 
-
-    SVG Animations 
-
-*/
-
-.menu-icon {
-    transform: rotate(-90deg);
-    transition: 0.5s;
-}
-
-.menu-icon:hover {
-    transition: 0.5s;
-    transform: rotate(0deg);
-
-}
-
-.menu-icon:active {
-    background-color: white;
-}
-
-.menu-icon:active::after {
-    height: 1000px;
-    width: 100%;
-}
-
-
 /* Technologies Card */
 
 .card-container {
@@ -518,6 +501,113 @@ form .btn.btn2 {
     padding: 2px 16px;
 }
 
+/* 
+    CSS For Small Screen
+*/
+
+nav .menu-icon {
+    display: none;
+}
+
+.menu-icon {
+    transform: rotate(-90deg);
+    transition: 0.5s;
+}
+
+.menu-icon:hover {
+    transition: 0.5s;
+    transform: rotate(0deg);
+
+}
+
+.menu-icon:active {
+    background-color: white;
+}
+
+.menu-icon:active::after {
+    height: 1000px;
+    width: 100%;
+}
+
+ @media only screen and (max-width: 600px) {
+    #header {
+        background-image: url('../img/coffee_shop_programming.jpg');
+        background-size: 10%;
+    }
+
+    /* .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+
+        right: -50px;
+        top: -50px;
+    } */
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    nav .menu-close {
+        display: block;
+    }
+
+    nav .menu-open {
+        display: block;
+    }
+
+    nav ul {
+        background: white;
+        position: fixed;
+        top: -110vh;
+        right: 0px;
+        width: 200px;
+        height: 110vh;
+        padding-top: 10px;
+        z-index: 2;
+        transition: top 0.5s;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul li a {
+        display: block;
+        margin: 25px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+    }
+
+    nav ul img {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    nav {
+        padding: 20px 25px;
+    }
+
+    nav.sticky {
+        padding: 20px 20px;
+        background: rgb(255, 255, 255);
+        /* background: rgba(0, 0, 0, 0.274); */
+    }
+    
+    nav.sticky ul li a, 
+    nav.sticky .logo {
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        /* color: #3b1c0a; */
+    }
+
+    /* .sticky {
+        display: none;
+    } */
+ }
 
 /* Tooltip Settings */
 
