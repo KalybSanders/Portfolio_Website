@@ -6,9 +6,9 @@ from .models import Contact
 
 # Create your views here.
 def home(request):
-    return render(request, "home.html") 
-    # contact = Contact.objects.all()
-    # return render(request, 'home.html', {'contact': contact})
+    # return render(request, "home.html") 
+    contact = Contact.objects.all()
+    return render(request, 'home.html', {'contact': contact})
 
 def contact(request):
     if request.method == 'POST':

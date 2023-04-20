@@ -1,25 +1,15 @@
 * {
     margin: 0;
-    padding: 0 ;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth !important;
-    /* overflow-y: auto; */
-    /* scroll-padding-top: 300px; */
-}
-
 body {
-    background: #080808;
+    background: rgb(0,0,15);
+background: linear-gradient(0deg, rgba(0,0,15,1) 0%, rgba(38,18,0,1) 100%);
     color:#fff;
 }
-
-/* 
-main {
-    margin-left: 5rem;
-}  */
 
 .container {
     padding: 10px 10%;
@@ -84,7 +74,7 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
-    font-weight: 500px;
+    font-weight: 600;
 
 }
 
@@ -92,7 +82,8 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    /* background: #6ac5c7; */
+    background: #ca6500;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -105,29 +96,34 @@ nav ul li a:hover::after {
 }
 
 nav.sticky {
-    padding: 10px 100px;
-    background: rgb(255, 255, 255);
+    /* padding: 10px 100px; */
+    /* background: rgb(255, 255, 255); */
     /* background: rgba(0, 0, 0, 0.274); */
+    background: rgb(99,38,0);
+background: linear-gradient(0deg, rgba(99,38,0,0.7031630170316301) 0%, rgba(0,0,0,0.75) 50%, rgba(124,63,0,0.85) 100%);
+    
+    /* background: rgb(99,38,0);
+    background: linear-gradient(0deg, rgba(99,38,0,0.75) 0%, rgba(124,63,0,0.8175182481751825) 100%); */
 }
 
 nav.sticky ul li a, 
 nav.sticky .logo {
     font-weight: 600;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     /* color: #3b1c0a; */
 }
 
 .header-text {
     font-size: 30px;
     position: absolute;
-    top: 30vh;
-    left: 15%;
+    top: 25%;
+    left: 25%;
     padding: 5vh 0 5vh 4vw;  /* top right bottom left */
     background: rgba(0, 0, 0, 0.801);
 }
 
-.brown {
-    color: brown;
+.header-text span {
+    color: #ca6500;
 }
 
 /* 
@@ -137,7 +133,7 @@ nav.sticky .logo {
 */
 
 #about {
-    padding: 80px 0;
+    padding: 120px 0;
     color: #ababab;
     position: relative;
 }
@@ -161,6 +157,10 @@ nav.sticky .logo {
     flex-basis: 60%;
 }
 
+.about-col-2 p {
+    font-size: 24px;
+}
+
 .about-col-3 {
     align-items: center;
     justify-content: center;
@@ -175,6 +175,7 @@ nav.sticky .logo {
 .tab-titles {
     display: flex;
     margin: 20px 0 40px; 
+    font-size: 48px;
 }
 
 .tab-links {
@@ -189,7 +190,7 @@ nav.sticky .logo {
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #ca6500;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -198,18 +199,19 @@ nav.sticky .logo {
 }
 
 .tab-links.active-link::after {
-    width: 50%;
+    width: 100%;
 
 }
 
 .tab-contents ul li {
     list-style: none;
     margin: 10px 0;
+    font-size: 30px;
 }
 
 .tab-contents ul li span {
-    color: #b54769;
-    font-size: 14px;
+    color: #6ac5c7;
+    font-size: 20px;
 }
 
 .tab-contents {
@@ -220,59 +222,6 @@ nav.sticky .logo {
     display: block;
 }
 
-
-/* 
-
-    Services Section CSS
-
-*/
-
-#services {
-    padding: 30px 0;
-}
-
-.services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-
-.services-list div {
-    background: #262626;
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
-}
-
-.services-list div i {
-    font-size: 50px;
-    margin-bottom: 30px;
-
-}
-
-.services-list div h2 {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.services-list div a {
-    text-decoration: none;
-    color: white;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-.services-list div:hover {
-    background: #ff004f;
-    transform: translateY(-10px)
-}
-
-
 /* 
 
     Portfolio Section CSS
@@ -280,12 +229,12 @@ nav.sticky .logo {
 */
 
 #portfolio {
-    padding: 50px 0;
+    padding: 100px 0;
 }
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
@@ -306,7 +255,7 @@ nav.sticky .logo {
 .layer {
     width: 100%;
     height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.5), #ff004f);
+    background: linear-gradient(rgba(0,0,0,0.5), #ca6500);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -329,7 +278,7 @@ nav.sticky .logo {
 
 .layer a {
     margin-top: 20px;
-    color: #ff004f;
+    color: #ca6500;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -352,7 +301,7 @@ nav.sticky .logo {
     display: block;
     margin: 50px auto; /* top&bottom  left&right*/
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #ca6500;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -361,7 +310,7 @@ nav.sticky .logo {
 }
 
 .btn:hover {
-    background: #ff004f;
+    background: #ca6500;
 
 }
 
@@ -416,7 +365,7 @@ nav.sticky .logo {
 
 .btn.btn2 {
     display: inline-block;
-    background: #ff004f;
+    background: #ca6500;
 }
 
 .contact-right form {
@@ -438,15 +387,11 @@ form textarea {
     resize: none;
 }
 
-form btn2 {
+form .btn2 {
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
-}
-
-form .btn.btn2 {
-
 }
 
 .copyright {
